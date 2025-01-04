@@ -11,6 +11,10 @@ const WORK_DURATION = 25 * 60; // 25 minutes
 const SHORT_BREAK = 5 * 60; // 5 minutes
 const LONG_BREAK = 15 * 60; // 15 minute
 
+// const WORK_DURATION = 20; // 25 minutes
+// const SHORT_BREAK = 15; // 5 minutes
+// const LONG_BREAK = 15; // 15 minute
+
 const WORK_BREAK_PAIR = WORK_DURATION + SHORT_BREAK; // 30 minutes
 const TOTAL_CYCLE = WORK_BREAK_PAIR * 3 + WORK_DURATION + LONG_BREAK;
 
@@ -23,6 +27,7 @@ export default function PomodoroTimer() {
 
   const [dingSound] = useSound(Ding, {
     volume: 0.1,
+    playbackRate: 0.5,
   });
 
   const [clockTicking] = useSound(ClockTicking, {
