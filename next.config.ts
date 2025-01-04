@@ -8,10 +8,16 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(mp3)$/,
-      type: "asset/resource",
-      generator: {
-        filename: "static/media/[name][ext]",
-      },
+      use: [
+        {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            publicPath: "/_next/static/media/",
+            outputPath: "static/media/",
+          },
+        },
+      ],
     });
     return config;
   },
