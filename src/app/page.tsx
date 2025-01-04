@@ -26,8 +26,7 @@ export default function PomodoroTimer() {
   const [sound, setSound] = useState("");
 
   const [dingSound] = useSound(Ding, {
-    volume: 0.1,
-    playbackRate: 0.5,
+    volume: 0.03,
   });
 
   const [clockTicking] = useSound(ClockTicking, {
