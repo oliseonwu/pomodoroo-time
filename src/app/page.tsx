@@ -3,17 +3,21 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import ProgressBar from "./components/ProgressBar";
 import useSound from "use-sound";
-import Ding from "../../public/sounds/ding.mp3";
-import ClockTicking from "../../public/sounds/clockTicking.mp3";
 import ThemeToggle from "./components/ThemeToggle";
 
-const WORK_DURATION = 25 * 60; // 25 minutes
-const SHORT_BREAK = 5 * 60; // 5 minutes
-const LONG_BREAK = 15 * 60; // 15 minute
+// Update the imports to use relative URLs
+const AUDIO_PATHS = {
+  ding: "/sounds/ding.mp3",
+  clockTicking: "/sounds/clockTicking.mp3",
+};
 
-// const WORK_DURATION = 20; // 25 minutes
-// const SHORT_BREAK = 15; // 5 minutes
-// const LONG_BREAK = 15; // 15 minute
+// const WORK_DURATION = 25 * 60; // 25 minutes
+// const SHORT_BREAK = 5 * 60; // 5 minutes
+// const LONG_BREAK = 15 * 60; // 15 minute
+
+const WORK_DURATION = 20; // 25 minutes
+const SHORT_BREAK = 15; // 5 minutes
+const LONG_BREAK = 15; // 15 minute
 
 const WORK_BREAK_PAIR = WORK_DURATION + SHORT_BREAK; // 30 minutes
 const TOTAL_CYCLE = WORK_BREAK_PAIR * 3 + WORK_DURATION + LONG_BREAK;
@@ -25,11 +29,11 @@ export default function PomodoroTimer() {
   const [progress, setProgress] = useState(0);
   const [sound, setSound] = useState("");
 
-  const [dingSound] = useSound(Ding, {
+  const [dingSound] = useSound(AUDIO_PATHS.ding, {
     volume: 0.03,
   });
 
-  const [clockTicking] = useSound(ClockTicking, {
+  const [clockTicking] = useSound(AUDIO_PATHS.clockTicking, {
     volume: 0.15,
   });
 
