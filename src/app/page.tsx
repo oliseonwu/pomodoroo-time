@@ -5,10 +5,12 @@ import ProgressBar from "./components/ProgressBar";
 import useSound from "use-sound";
 import ThemeToggle from "./components/ThemeToggle";
 
+const BASE_PATH =
+  process.env.NODE_ENV === "production" ? "/pomodoroo-time" : "";
 // Update the imports to use relative URLs
 const AUDIO_PATHS = {
-  ding: "/sounds/ding.mp3",
-  clockTicking: "/sounds/clockTicking.mp3",
+  ding: `${BASE_PATH}/sounds/ding.mp3`,
+  clockTicking: `${BASE_PATH}/sounds/clockTicking.mp3`,
 };
 
 // const WORK_DURATION = 25 * 60; // 25 minutes
