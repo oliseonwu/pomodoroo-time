@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/pomodoro-timer" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/pomodoroo-time" : "",
   images: {
     unoptimized: true,
   },
