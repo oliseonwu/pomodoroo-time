@@ -16,7 +16,7 @@ const AUDIO_PATHS = {
 // For production
 const WORK_DURATION = 25 * 60; // 25 minutes
 const SHORT_BREAK = 5 * 60; // 5 minutes
-const LONG_BREAK = 15 * 60; // 15 minute
+const LONG_BREAK = 30 * 60; // 30 minutes
 
 // For development
 // const WORK_DURATION = 20; // 25 minutes
